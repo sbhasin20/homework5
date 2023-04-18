@@ -1,0 +1,136 @@
+---
+title: "Bhasin-S-hwk5-2"
+author: "Sachi Bhasin"
+date: "2023-04-18"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, stringr, readxl, modelsummary, data.table, gdata, scales,
+               kableExtra)
+if (!requireNamespace("AER", quietly = TRUE)) {
+  install.packages("AER")
+}
+library(AER)
+library(fixest)
+
+load("Hwk5_workspace.Rdata")
+```
+
+\vspace{.2in}
+\noindent Question 1
+
+```{r}
+graph1 
+```
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 2
+
+There have been several policy changes leading to the reduction in direct purchase health insurance recently. In 2012 under the ACA, Medicaid coverage was expanded. This led to several states adopting medicaid expansion, which may the share of insured individuals with direct purchase health insurance since they are eligible for medicaid. Thus, they will enroll in medicaid over direct purchase health insurance. In addition, subsidies and tax credits from the ACA made insurance purchases through exchanges more affordable compared to direct purchase products.
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 3
+
+```{r}
+question3
+```
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 4
+
+```{r}
+uninsurance.plot   
+```
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 5
+
+```{r}
+question5_table
+```
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 6
+
+
+
+
+
+```{r}
+modelsummary(Q6)
+```
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 7
+
+
+
+
+
+
+
+
+
+
+```{r}
+modelsummary(question7)
+```
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 8
+
+
+
+
+
+
+```{r}
+modelsummary(question8)
+```
+My results are slightly different but not my much. This may be because the percent of uninsured individuals may have not drastically changed due to the expansion. 
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 9
+
+```{r, echo=FALSE, message=FALSE}
+
+iplot(question9,
+                    xlab = "Time Until Treatment",
+                    main = "Event Study")
+
+```
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 10 
+
+```{r, echo=FALSE, message=FALSE}
+iplot(question9,
+                    xlab = "Time Until Treatment",
+                    main = "Event Study")
+
+```
+
