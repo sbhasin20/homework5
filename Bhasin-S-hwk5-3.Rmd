@@ -1,0 +1,136 @@
+---
+title: "Bhasin-S-hwk5-3"
+author: "Sachi Bhasin"
+date: "2023-04-19"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, stringr, readxl, modelsummary, data.table, gdata, scales,
+               kableExtra)
+if (!requireNamespace("AER", quietly = TRUE)) {
+  install.packages("AER")
+}
+library(AER)
+library(fixest)
+library(lemon)
+library(modelsummary)
+library(kableExtra)
+
+load("Hwk5_workspace.Rdata")
+```
+
+\vspace{.2in}
+\noindent Question 1
+
+```{r plot, include=T, eval=T, echo=FALSE, fig.cap="Share of Adult Population with Direct Purchase Health Insurance Over Time", fig.ref = NULL, fig.with=5}
+graph1 
+```
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 2
+
+There have been several policy changes leading to the reduction in direct purchase health insurance recently. In 2012 under the ACA, Medicaid coverage was expanded. This led to several states adopting Medicaid expansion, which may the share of insured individuals with direct purchase health insurance since they are eligible for Medicaid. Thus, they will enroll in Medicaid over direct purchase health insurance. In addition, subsidies and tax credits from the ACA made insurance purchases through exchanges more affordable compared to direct purchase products.
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 3
+
+```{r, include=T, eval=T, echo=FALSE, fig.cap="Share of Adult Population with Medicaid Over Time", fig.ref = NULL, fig.with=5}
+question3
+```
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 4
+
+```{r, include=T, eval=T, echo=FALSE, fig.cap="Share of Uninsured Overtine in States that Expanded Medicaid in 2014 versus States that did not Expand", fig.ref = NULL, fig.with=5}
+uninsurance.plot   
+```
+
+
+\newpage
+
+
+\vspace{.2in}
+\noindent Question 5
+
+
+
+
+```{r}
+kable(question5_table, caption = "Average Percent of Uninsured Individuals in 2015 and 2015.") %>%
+  kable_styling()
+```
+
+
+\newpage
+
+
+\vspace{.2in}
+\noindent Question 6
+
+
+
+
+
+```{r}
+modelsummary(question6_a)
+
+
+```
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 7
+
+```{r}
+modelsummary(question7)
+```
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 8
+
+```{r}
+modelsummary(question8)
+```
+The results are slightly different but not by much. By including states that expanded after 2014, states that implemented Medicaid expansion slower are included. Since these states slowly expanded Medicaid, the uninsured rate may not have drastically changed in this data set. It could take time for this expansion to be reflected in the uninsurance rate. 
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 9
+
+```{r, include=T, eval=T, echo=FALSE, fig.cap="Effect of Medicaid Expanion in Each Year", fig.ref = NULL, fig.with=5}
+iplot(question9,
+                    xlab = "Time Until Treatment",
+                    main = "Event Study")
+```
+
+
+\newpage
+
+\vspace{.2in}
+\noindent Question 10 
+
+```{r, include=T, eval=T, echo=FALSE, fig.cap="Effect of Medicaid Expansion in Each Year including States that Expanded after 2014", fig.ref = NULL, fig.with=5}
+iplot(question10,
+                     xlab = "Time Until Treatment",
+                     main = "Event Study")
+```
+
+
