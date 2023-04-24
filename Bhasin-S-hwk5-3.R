@@ -120,7 +120,7 @@ question8 <- feols(share_uninsured ~ treat | State + year, data = question8_data
 
 modelsummary(question8)
 
-#My results are slightly different. This may be because the percent of uninsured individuals may have not drastically changed due to the expansion. 
+#The results are slightly different but not by much. By including states that expanded after 2014, states that implemented Medicaid expansion slower are included. The uninsured rate is more pronounced with the larger sample size.
 
 #9
 
