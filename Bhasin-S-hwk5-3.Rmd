@@ -108,7 +108,7 @@ modelsummary(question7)
 ```{r}
 modelsummary(question8)
 ```
-The results are slightly different but not by much. By including states that expanded after 2014, states that implemented Medicaid expansion slower are included. Since these states slowly expanded Medicaid, the uninsured rate may not have drastically changed in this data set. It could take time for this expansion to be reflected in the uninsurance rate. 
+The results are slightly different but not by much. By including states that expanded after 2014, states that implemented Medicaid expansion slower are included. The uninsured rate is more pronounced with the larger sample size. 
 
 \newpage
 
